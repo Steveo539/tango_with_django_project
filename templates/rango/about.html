@@ -1,0 +1,26 @@
+<DOCTYPE html>
+
+  {% load staticfiles %}
+
+  <html>
+  <head>
+    <title>About</title>
+  </head>
+
+  <body>
+    <h1>This is the about page</h1>
+
+    <p>This page has been put together by Steven Omeis</p>
+
+    <div>
+      <img src= "{%static "images/chazz.jpg" %}" alt="Picture of Chazz"/>
+    </div>
+
+    <div>
+      <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of a kitty"/>
+    </div>
+
+  </body>
+
+
+  </html>
