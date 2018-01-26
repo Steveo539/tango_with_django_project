@@ -4,5 +4,6 @@ from rango import views
 admin.autodiscover()
 urlpatterns = [
 url(r'^$', views.index, name='index'),
-url(r'^$')
+url(r'^about/$', views.about, name='about'),
+url(r'^category/(?P<category_name_slug>[\w\-]+)/$', views.show_category, name='show_category'),
 ]

@@ -11,5 +11,4 @@ class PageAdmin(admin.ModelAdmin):
     def __str__(self):
         return self.title
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Category)
 admin.site.register(Page, PageAdmin)
