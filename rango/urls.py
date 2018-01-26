@@ -4,4 +4,5 @@ from rango import views
 admin.autodiscover()
 urlpatterns = [
 url(r'^$', views.index, name='index'),
+url(r'^$')
 ]
