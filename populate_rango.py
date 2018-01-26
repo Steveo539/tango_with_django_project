@@ -28,12 +28,12 @@ def populate():
     {"title":"Flask",
     "url":"http://flask.pocoo.org"}]
 
-    cats = {"Python": {"pages": python_pages}, #views and likes for 5.8   128,64
-            "Django": {"pages": django_pages}, #64 ,32
-            "Other Frameworks": {"pages": other_pages}} #32 ,16
+    cats = {"Python": {"pages": python_pages, "views":128, "likes":64}, #views and likes for 5.8   128,64
+            "Django": {"pages": django_pages, "views":64, "likes":32}, #64 ,32
+            "Other Frameworks": {"pages": other_pages, "views":32, "likes":16}} #32 ,16
 
     for cat, cat_data in cats.items():
-        c = add_cat(cat) #add the proper parameters for exercise 5.8 cats[cat]["lkes"] ??????
+        c = add_cat(cat, cats[cat]["views"], cats[cat]["likes"]) #add the proper parameters for exercise 5.8 cats[cat]["lkes"] ??????
         for p in cat_data["pages"]:
             add_page(c, p["title"], p["url"])
 
@@ -48,8 +48,8 @@ def add_page(cat, title, url, views=0):
     p.save()
     return p
 
-def add_cat(name): #add views, likes for exercise 5.8
-    c = Category.objects.get_or_create(name=name)[0] #add views and likes for exercise 5.8
+def add_cat(name,views,likes): #add views, likes for exercise 5.8
+    c = Category.objects.get_or_create(name=name, views=views,likes=likes)[0] #add views and likes for exercise 5.8
     c.save()
     return c
 
