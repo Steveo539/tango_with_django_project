@@ -20,6 +20,8 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
+LOGIN_URL = '/rango/login/'
+
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 # Quick-start development settings - unsuitable for production
